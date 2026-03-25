@@ -20,7 +20,13 @@ Since CS:GO does not have a native "wings" slot, this plugin works by looking fo
 Place your custom `.svg` icons in the following directory on your server/FastDL:
 `csgo/panorama/images/icons/equipment/`
 
-### 2. Naming Convention
+### 2. Extracting from CS2
+You can grab the original wings icon directly from CS2's files.
+- **Location in CS2**: `game/csgo/panorama/images/icons/equipment/attacker_in_air.svg`
+- **How to extract**: Use [Source 2 Viewer](https://valveresourceformat.github.io/) to open the `pak01_dir.vpk` file in your CS2 directory and search for `attacker_in_air.svg`.
+- **Note**: For CS:GO, you'll need to combine this wings icon with each weapon's icon to create files like `ak47_wings.svg`.
+
+### 3. Naming Convention
 For every weapon you want to support, you need an icon named `{weapon}_wings.svg`. 
 Examples:
 - `ak47_wings.svg`
