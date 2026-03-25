@@ -1,19 +1,42 @@
 # Wings Icon (CS2 Style) for CS:GO
 
-This plugin replicates the "wings" (airborne) icon feature from CS2 in CS:GO's killfeed.
+This plugin replicates the "wings" (airborne) icon feature from CS2 in CS:GO's killfeed. Unlike other versions, this plugin does **not** replace the existing `noscope` icon for snipers, but instead adds a dedicated icon for airborne kills for all weapons.
 
 ## Features
-- Displays the airborne icon (using the `noscope` flag) for kills made while in the air.
-- Works for every weapon type except utility (grenades).
-- Compatible with custom HUDs that replace the `noscope` icon with the CS2 wings icon.
+- Adds a "wings" icon to the killfeed for kills made while jumping or falling.
+- Works for every weapon type (rifles, pistols, knives, zeus).
+- Does **NOT** trigger for utility (grenades).
+- Does **NOT** overwrite the native `noscope` icon, allowing both to appear simultaneously for jumping no-scopes.
 
 ## Installation
 1. Compile the `wings.sp` file using the SourceMod compiler (e.g., [spcomp](https://www.sourcemod.net/downloads.php)).
 2. Upload the resulting `wings.smx` to your server's `addons/sourcemod/plugins/` directory.
-3. Load the plugin by restarting the server or using the console command `sm plugins load wings`.
+3. Load the plugin: `sm plugins load wings`.
 
-## Technical Note
-In CS:GO, this plugin uses the `noscope` flag to trigger an extra icon in the killfeed. To see a true pair of "wings" as in CS2, your server should use a custom panorama HUD or icon replacement that changes the default `noscope` icon to a "wings" icon.
+## Adding the Icons (Required)
+Since CS:GO does not have a native "wings" slot, this plugin works by looking for a custom weapon icon. You must provide these icons in your server's resource files (FastDL).
+
+### 1. The Icon Path
+Place your custom `.svg` icons in the following directory on your server/FastDL:
+`csgo/panorama/images/icons/equipment/`
+
+### 2. Naming Convention
+For every weapon you want to support, you need an icon named `{weapon}_wings.svg`. 
+Examples:
+- `ak47_wings.svg`
+- `deagle_wings.svg`
+- `knife_wings.svg`
+- `awp_wings.svg`
+
+**Tip:** These icons should be a combination of the original weapon icon and the CS2 wings icon.
+
+### 3. Translation (Optional)
+To prevent the game from showing `#ak47_wings` as the weapon name in the killfeed (for some languages), add the following to your `resource/csgo_english.txt` (and other languages):
+```text
+"SFUI_WPNHX_ak47_wings"    "AK-47"
+"SFUI_WPNHX_deagle_wings"  "Desert Eagle"
+... and so on for each weapon.
+```
 
 ## Credits
 Author: **v0tekick**  

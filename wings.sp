@@ -8,8 +8,8 @@ public Plugin myinfo =
 {
 	name = "Wings Icon (CS2 Style)",
 	author = "v0tekick",
-	description = "Adds airborne icon (using noscope flag) to killfeed just like CS2",
-	version = "1.0",
+	description = "Adds airborne wings icon to killfeed without replacing existing features",
+	version = "1.1",
 	url = "https://github.com/v0tekick/wingshx"
 };
 
@@ -47,10 +47,12 @@ public Action Event_PlayerDeath(Event event, const char[] name, bool dontBroadca
 	// Check if the attacker is in the air
 	if (!(GetEntityFlags(attacker) & FL_ONGROUND))
 	{
-		// Set the 'noscope' flag.
-		// NOTE: In CS:GO, this natively triggers the no-scope icon.
-		// For a true CS2 experience, a custom HUD replacement for the icon is recommended.
-		event.SetBool("noscope", true);
+		// To add a brand new icon without replacing existing ones (like noscope),
+		// we append a suffix to the weapon name.
+		// The game will look for a custom icon named {weapon}_wings.svg
+		char newWeapon[72];
+		Format(newWeapon, sizeof(newWeapon), "%s_wings", weapon);
+		event.SetString("weapon", newWeapon);
 	}
 	
 	return Plugin_Changed;
