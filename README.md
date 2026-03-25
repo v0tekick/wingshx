@@ -9,7 +9,7 @@ This plugin replicates the "wings" (airborne) icon feature from CS2 in CS:GO's k
 - Does **NOT** overwrite the native `noscope` icon, allowing both to appear simultaneously for jumping no-scopes.
 
 ## Installation
-1. Compile the `wings.sp` file using the SourceMod compiler (e.g., [spcomp](https://www.sourcemod.net/downloads.php)).
+1. Compile the `wings.sp` file using the SourceMod compiler (e.g., [spcomp](https://www.sourcemod.net/downloads.php)). (there is also a compiled version if you're to lazy hehe)
 2. Upload the resulting `wings.smx` to your server's `addons/sourcemod/plugins/` directory.
 3. Load the plugin: `sm plugins load wings`.
 
