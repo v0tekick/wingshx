@@ -18,7 +18,9 @@ Since CS:GO does not have a native "wings" slot, this plugin works by looking fo
 
 ### 1. The Icon Path
 Place your custom `.svg` icons in the following directory on your server/FastDL:
-`csgo/panorama/images/icons/equipment/`
+`csgo/materials/panorama/images/icons/equipment/`
+
+**Note:** The `materials/` prefix is mandatory for the game to download the files and for the Panorama engine to find them.
 
 ### 2. Extracting from CS2
 You can grab the original wings icon directly from CS2's files.

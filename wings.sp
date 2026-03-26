@@ -34,7 +34,7 @@ public void OnMapStart()
 	char sPath[PLATFORM_MAX_PATH];
 	for (int i = 0; i < sizeof(g_sWeaponIcons); i++)
 	{
-		Format(sPath, sizeof(sPath), "panorama/images/icons/equipment/%s_wings.svg", g_sWeaponIcons[i]);
+		Format(sPath, sizeof(sPath), "materials/panorama/images/icons/equipment/%s_wings.svg", g_sWeaponIcons[i]);
 		if (FileExists(sPath))
 		{
 			AddFileToDownloadsTable(sPath);
