@@ -8,14 +8,38 @@ public Plugin myinfo =
 {
 	name = "Wings Icon (CS2 Style)",
 	author = "v0tekick",
-	description = "Adds airborne wings icon to killfeed without replacing existing features",
-	version = "1.1",
+	description = "Adds airborne wings icon to killfeed and handles file downloads",
+	version = "1.2",
 	url = "https://github.com/v0tekick/wingshx"
+};
+
+const char g_sWeaponIcons[][] = {
+	"ak47", "m4a1", "m4a1_silencer", "awp", "ssg08", "deagle", "usp_silencer", "glock", "p250", 
+	"fiveseven", "tec9", "cz75a", "revolver", "galilar", "famas", "aug", "sg556", "g3sg1", 
+	"scar20", "mac10", "mp9", "mp7", "mp5sd", "ump45", "p90", "bizon", "nova", "xm1014", 
+	"mag7", "sawedoff", "m249", "negev", "taser", "knife", "knifegg", "knife_t", "knife_karambit", 
+	"knife_m9_bayonet", "knife_butterfly", "knife_falchion", "knife_flip", "knife_gut", 
+	"knife_tactical", "knife_shadow_dagger", "knife_survival_bowie", "knife_ursus", 
+	"knife_gypsy_jackknife", "knife_stiletto", "knife_widowmaker", "knife_canis", 
+	"knife_cord", "knife_skeleton", "knife_outdoor", "knife_css"
 };
 
 public void OnPluginStart()
 {
 	HookEvent("player_death", Event_PlayerDeath, EventHookMode_Pre);
+}
+
+public void OnMapStart()
+{
+	char sPath[PLATFORM_MAX_PATH];
+	for (int i = 0; i < sizeof(g_sWeaponIcons); i++)
+	{
+		Format(sPath, sizeof(sPath), "panorama/images/icons/equipment/%s_wings.svg", g_sWeaponIcons[i]);
+		if (FileExists(sPath))
+		{
+			AddFileToDownloadsTable(sPath);
+		}
+	}
 }
 
 public Action Event_PlayerDeath(Event event, const char[] name, bool dontBroadcast)
