@@ -13,7 +13,7 @@ public Plugin myinfo =
 	url = "https://github.com/v0tekick/wingshx"
 };
 
-char g_sWeaponIcons[][] = {
+char g_sWeaponIcons[54][32] = {
 	"ak47", "m4a1", "m4a1_silencer", "awp", "ssg08", "deagle", "usp_silencer", "glock", "p250", 
 	"fiveseven", "tec9", "cz75a", "revolver", "galilar", "famas", "aug", "sg556", "g3sg1", 
 	"scar20", "mac10", "mp9", "mp7", "mp5sd", "ump45", "p90", "bizon", "nova", "xm1014", 
