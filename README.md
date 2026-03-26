@@ -17,8 +17,23 @@ This plugin replicates the "wings" (airborne) icon feature from CS2 in CS:GO's k
 Since CS:GO does not have a native "wings" slot, this plugin works by looking for a custom weapon icon. You must provide these icons in your server's resource files (FastDL).
 
 ### 1. The Icon Path
-Place your custom `.svg` icons in the following directory on your server/FastDL:
+Place the `csgo` folder from the repository into your main server directory. The icons are located at:
 `csgo/panorama/images/icons/equipment/`
+
+## FastDL (GitHub) Setup
+To use this GitHub repository as a FastDL server, use the **Raw** URL in your `server.cfg`.
+
+1.  **Config**: Add this to your `server.cfg`:
+    ```text
+    sv_allowdownload 1
+    sv_downloadurl "https://raw.githubusercontent.com/v0tekick/wingshx/main/"
+    ```
+    *Note: The trailing slash is important.*
+
+2.  **How it works**: 
+    When a player connects, the game will try to download:
+    `https://raw.githubusercontent.com/v0tekick/wingshx/main/csgo/panorama/images/icons/equipment/ak47_wings.svg`
+    This URL points directly to the raw file on GitHub.
 
 ### 2. Extracting from CS2
 You can grab the original wings icon directly from CS2's files.
