@@ -18,7 +18,7 @@ Since CS:GO does not have a native "wings" slot, this plugin works by looking fo
 
 ### 1. The Icon Path
 Place the `csgo` folder from the repository into your main server directory. The icons are located at:
-`csgo/panorama/images/icons/equipment/`
+`csgo/materials/panorama/images/icons/equipment/`
 
 ## FastDL (GitHub) Setup
 To use this GitHub repository as a FastDL server, use the **Raw** URL in your `server.cfg`.
@@ -32,7 +32,7 @@ To use this GitHub repository as a FastDL server, use the **Raw** URL in your `s
 
 2.  **How it works**: 
     When a player connects, the game will try to download:
-    `https://raw.githubusercontent.com/v0tekick/wingshx/main/csgo/panorama/images/icons/equipment/ak47_wings.svg`
+    `https://raw.githubusercontent.com/v0tekick/wingshx/main/csgo/materials/panorama/images/icons/equipment/ak47_wings.svg`
     This URL points directly to the raw file on GitHub.
 
 ### 2. Extracting from CS2

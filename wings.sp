@@ -36,10 +36,10 @@ public void OnMapStart()
 	{
 		// Note: The game engine expects paths relative to the 'csgo' directory,
 		// but for AddFileToDownloadsTable to work with your specific structure,
-		// we use the 'panorama/...' path which should be mirrored on FastDL.
-		Format(sPath, sizeof(sPath), "panorama/images/icons/equipment/%s_wings.svg", g_sWeaponIcons[i]);
+		// we use the 'materials/panorama/...' path which should be mirrored on FastDL.
+		Format(sPath, sizeof(sPath), "materials/panorama/images/icons/equipment/%s_wings.svg", g_sWeaponIcons[i]);
 		
-		// We check for the file in the 'csgo/panorama/...' path on the server
+		// We check for the file in the 'csgo/materials/panorama/...' path on the server
 		char sFullServerPath[PLATFORM_MAX_PATH];
 		Format(sFullServerPath, sizeof(sFullServerPath), "csgo/%s", sPath);
 		
