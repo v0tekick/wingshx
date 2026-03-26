@@ -26,7 +26,7 @@ To use this GitHub repository as a FastDL server, use the **Raw** URL in your `s
 1.  **Config**: Add this to your `server.cfg`:
     ```text
     sv_allowdownload 1
-    sv_downloadurl "https://raw.githubusercontent.com/v0tekick/wingshx/main/"
+    sv_downloadurl "https://raw.githubusercontent.com/v0tekick/wingshx/main/csgo/"
     ```
     *Note: The trailing slash is important.*
 

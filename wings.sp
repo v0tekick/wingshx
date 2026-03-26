@@ -45,7 +45,7 @@ public void OnMapStart()
 		
 		if (FileExists(sFullServerPath))
 		{
-			AddFileToDownloadsTable(sFullServerPath);
+			AddFileToDownloadsTable(sPath);
 		}
 	}
 }
